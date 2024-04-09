@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const axios = require('axios').default;
 
-const lat = process.env.LAT;
-const lon = process.env.LONG ;
+const lat = process.env.LAT || 31.2504;
+const lon = process.env.LONG || -99.2506;
 const API_key = "e53b89bf6f72d78026517e7df004ad77";
 
 app.get('/', (req, res) => {
