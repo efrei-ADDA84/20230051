@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3 )
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3 
       with:
-        node-version: '16'
+        node-version: '16' 
 
     - name: Install dependencies
       run: npm install
@@ -31,12 +31,11 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Push Docker image to Docker Hub
-      run: docker push guylainekamdem/tp1/weather_image:latest
+      run: docker push guylainekamdem/weather_image:latest
 
     - name: Deploy to production
       run: |
-        ssh user@123.456.789.123 "docker pull guylainekamdem/weather_image:latest &&
+        ssh user@123.456.789.123 "docker pull yourusername/weather_image:latest &&
         docker stop weather_container &&
         docker rm weather_container &&
         docker run -d --name=weather_container -p 3500:3500 -e LAT='31.2504' -e LONG='-99.2506' yourusername/weather_image:latest"
-
