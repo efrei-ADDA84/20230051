@@ -29,7 +29,9 @@ jobs:
       with:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-
+        
+    - name: Push Docker image to Docker Hub
+      run: docker push yourusername/weather_image:latest
 
     - name: Deploy to production
       run: |
