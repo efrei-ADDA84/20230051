@@ -31,7 +31,10 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         
     - name: Push Docker image to Docker Hub
-      run: docker push guylainekamdem/weather_image:latest
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        tags: guylainekamdem/weather_image:latest
 
 
     - name: Deploy to production
