@@ -36,10 +36,3 @@ jobs:
         push: true
         tags: guylainekamdem/weather_image:latest
 
-
-    - name: Deploy to production
-      run: |
-        ssh user@123.456.789.123 "docker pull guylainekamdem/weather_image:latest &&
-        docker stop weather_container &&
-        docker rm weather_container &&
-        docker run -d --name=weather_container -p 3500:3500 -e LAT='31.2504' -e LONG='-99.2506' yourusername/weather_image:latest"
