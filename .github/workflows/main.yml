@@ -31,7 +31,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
 
     - name: Push Docker image to Docker Hub
-      run: docker push guylainekamdem/weather_image:latest
+      run: docker push guylainekamdem/tp1:latest
 
     - name: Deploy to production
       run: |
