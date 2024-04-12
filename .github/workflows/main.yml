@@ -20,7 +20,10 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-
+      
+    - name: Check Dockerfile with Hadolint
+      run: docker run --rm -i hadolint/hadolint < Dockerfile
+      
     - name: Build Docker image
       run: docker build -t weather_image .
 
