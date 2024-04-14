@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: guylainekamdem/weather_image:latest
+          tags: guylainekamdem/20230051:latest
 
       - name: Login to ACR
         uses: azure/login@v1
