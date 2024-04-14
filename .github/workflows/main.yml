@@ -71,7 +71,7 @@ jobs:
         with:
           resource-group: ${{ secrets.RESOURCE_GROUP }}
           name: 20230051
-          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230051:latest
+          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230051
           location: 'francecentral'
           dns-name-label: devops-20230051
           registry: ${{ secrets.REGISTRY_LOGIN_SERVER }}
