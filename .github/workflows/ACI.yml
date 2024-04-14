@@ -1,0 +1,33 @@
+name: Deploy to Azure Container Instance
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Container Instance
+        uses: azure/container-instances-deploy@v1
+        with:
+          resource-group: ${{ secrets.RESOURCE_GROUP }}
+          name: 11002167
+          image: efreidevops.azurecr.io/weather_image:latest
+          cpu: 1.0
+          memory: 1.5
+          location: francecentral
+          dns-name-label: devops-20230051
+          ports: 3500
+          environment-variables: |
+            API_KEY=${{ secrets.API_KEY }}
