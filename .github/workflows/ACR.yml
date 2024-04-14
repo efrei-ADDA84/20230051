@@ -20,6 +20,6 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/weather_image:latest .
+          docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/20230051:latest .
           docker login ${{ secrets.REGISTRY_LOGIN_SERVER }} -u ${{ secrets.REGISTRY_USERNAME }} -p ${{ secrets.REGISTRY_PASSWORD }}
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/weather_image:latest
