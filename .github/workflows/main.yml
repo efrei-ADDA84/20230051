@@ -68,3 +68,10 @@ jobs:
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
             name: 20230051
             location: 'francecentral'
+            cpu: 1
+            ip-address: Public
+            memory: 1.5
+            os-type: Linux
+            ports: 80
+            protocol: TCP
+            restart-policy: Always
