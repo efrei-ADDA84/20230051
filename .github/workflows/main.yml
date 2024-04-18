@@ -67,4 +67,4 @@ jobs:
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
             name: 20230051
-            location: 'francecentral'
+            location: 'west europe'
